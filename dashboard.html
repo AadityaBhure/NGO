@@ -3,22 +3,74 @@
 <head>
   <title>Dashboard</title>
   <link rel="stylesheet" href="style.css">
-  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="app.js" defer></script>
 </head>
 
-<body onload="checkUser(); loadProfile();">
-  <div class="container">
-    <h2>Dashboard</h2>
+<body onload="initDashboard()">
 
-    <p><strong>Email:</strong> <span id="emailDisplay"></span></p>
-    <p><strong>Name:</strong> <span id="nameDisplay"></span></p>
+  <!-- Logout -->
+  <button class="logout-btn" onclick="logout()">Logout</button>
 
-    <input id="nameInput" placeholder="Enter your name">
-    <button onclick="updateProfile()">Save Name</button>
+  <!-- Welcome -->
+  <h2 id="welcomeText" style="text-align:center; margin-top:20px;"></h2>
 
-    <button onclick="logout()">Logout</button>
+  <!-- Name Modal -->
+  <div id="nameModal" class="modal">
+    <div class="modal-content">
+      <h3>Enter Your Name</h3>
+      <input id="nameInput" placeholder="Your Name">
+      <button onclick="saveName()">Save</button>
+    </div>
   </div>
 
-  <script src="app.js"></script>
+  <div class="dashboard">
+
+    <!-- INPUT -->
+    <div class="card">
+      <h2>Input</h2>
+
+      <input id="age" type="number" placeholder="Age">
+
+      <select id="gender">
+        <option value="">Gender</option>
+        <option>Male</option>
+        <option>Female</option>
+      </select>
+
+      <select id="stress">
+        <option value="">Stress</option>
+        <option>Low</option>
+        <option>Medium</option>
+        <option>High</option>
+      </select>
+
+      <input id="sleep" type="number" placeholder="Sleep Hours">
+
+      <select id="anxiety">
+        <option value="">Anxiety</option>
+        <option>Low</option>
+        <option>Medium</option>
+        <option>High</option>
+      </select>
+
+      <input id="mood" placeholder="Mood">
+
+      <button onclick="predictMentalHealth()">Predict</button>
+    </div>
+
+    <!-- GRAPHS -->
+    <div class="chart-box">
+      <h2>Current</h2>
+      <canvas id="chart"></canvas>
+
+      <h2 style="margin-top:30px;">History</h2>
+      <canvas id="historyChart"></canvas>
+    </div>
+
+  </div>
+
 </body>
 </html>

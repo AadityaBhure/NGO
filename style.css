@@ -1,52 +1,146 @@
-body {
+/* ===== RESET ===== */
+* {
   margin: 0;
+  padding: 0;
+  box-sizing: border-box;
   font-family: Arial, sans-serif;
+}
+
+/* ===== AUTH PAGES (LOGIN/SIGNUP) ===== */
+.auth-body {
   background: #0f172a;
+  height: 100vh;
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
-  color: white;
 }
 
-.container {
+.auth-container {
+  width: 100%;
+  max-width: 350px;
   background: #1e293b;
   padding: 30px;
   border-radius: 12px;
-  width: 320px;
   text-align: center;
 }
 
-h2 {
+.auth-container h2 {
   margin-bottom: 20px;
 }
 
-input {
+/* Inputs */
+.auth-container input {
   width: 100%;
   padding: 12px;
-  margin: 10px 0;
+  margin-bottom: 12px;
   border: none;
   border-radius: 6px;
   outline: none;
 }
 
-button {
+/* Button */
+.auth-container button {
   width: 100%;
   padding: 12px;
-  margin-top: 10px;
   background: #3b82f6;
   border: none;
   border-radius: 6px;
   color: white;
   cursor: pointer;
   font-weight: bold;
+  margin-top: 10px;
+  margin-bottom: 15px;
 }
 
-button:hover {
+.auth-container button:hover {
   background: #2563eb;
 }
 
-a {
+/* Text */
+.auth-container p {
+  font-size: 14px;
+}
+
+.auth-container a {
   color: #60a5fa;
   text-decoration: none;
+}
+
+/* ===== DASHBOARD ===== */
+
+body {
+  background: #0f172a;
+  color: white;
+}
+
+/* Logout */
+.logout-btn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  padding: 10px 16px;
+  background: #ef4444;
+  border: none;
+  color: white;
+  border-radius: 6px;
+}
+
+/* Layout */
+.dashboard {
+  display: flex;
+  justify-content: center;
+  gap: 50px;
+  padding-top: 80px;
+}
+
+/* Cards */
+.card, .chart-box {
+  background: #1e293b;
+  padding: 25px;
+  border-radius: 12px;
+  width: 320px;
+}
+
+.chart-box {
+  width: 500px;
+}
+
+/* Dashboard Inputs */
+.card input,
+.card select {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 6px;
+  border: none;
+}
+
+/* Dashboard Button */
+.card button {
+  width: 100%;
+  padding: 10px;
+  background: #3b82f6;
+  border: none;
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+/* Modal */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: none;
+  background: rgba(0,0,0,0.6);
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background: #1e293b;
+  padding: 20px;
+  border-radius: 10px;
 }

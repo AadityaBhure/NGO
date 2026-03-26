@@ -4,21 +4,22 @@
   <title>Login</title>
   <link rel="stylesheet" href="style.css">
 
-  <!-- ✅ Correct order -->
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
   <script src="app.js" defer></script>
 </head>
 
-<body>
-  <div class="container">
+<body class="auth-body">
+
+  <div class="auth-container">
     <h2>Login</h2>
 
     <input id="email" type="email" placeholder="Email">
     <input id="password" type="password" placeholder="Password">
 
-    <button type="button" onclick="login()">Login</button>
+    <button onclick="login()">Login</button>
 
     <p>Don't have an account? <a href="signup.html">Signup</a></p>
   </div>
+
 </body>
 </html>
